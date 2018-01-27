@@ -1,0 +1,14 @@
+.coverage
+coverage
+*.log
+/static
+.cache
+.beans
+.docs
+.gh_pages
+images/tmp*
+
+npm-debug.log
+
+# node modules folder
+node_modules

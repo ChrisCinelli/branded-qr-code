@@ -1,0 +1,100 @@
+{
+  "name": "branded-qr-code",
+  "version": "1.2.0",
+  "description": "Branded QRcode generation",
+  "author": "Chris Cinelli",
+  "keywords": [
+    "images",
+    "logo",
+    "brand",
+    "qr",
+    "qr code",
+    "qrcode",
+    "nodejs"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "debugTest": "node --inspect-brk node_modules/.bin/jest",
+    "test": "jest",
+    "watch:test": "npm run test -- --watch",
+    "cover": "npm run test -- --coverage",
+    "coverHTML": "npm run cover && open ./coverage/lcov-report/index.html",
+    "lint": "eslint lib && eslint scripts",
+    "lintfix": "eslint lib --fix && eslint scripts --fix",
+    "lint-test-staged": "lint-staged",
+    "clean": "rm -rf dist && mkdir dist",
+    "rollup": "./node_modules/.bin/rollup -c",
+    "build-lib": "babel -d ./dist ./index.js -s",
+    "build": "npm run clean && npm run rollup",
+    "prepublish": "npm run lint && npm run cover && npm run build",
+    "demo-generate": "babel-node demos/generate/index.js",
+    "demo": "babel-node demos/express/index.js",
+    "demodebug": "babel-node --inspect-brk demos/express/index.js",
+    "resize": "babel-node scripts/createResized.js",
+    "gaussian": "babel-node scripts/createGaussianBlur.js",
+    "finalize": "babel-node scripts/createLogoForQRCode.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "mockData.js$",
+      ".eslintrc.js$"
+    ],
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
+      }
+    },
+    "setupTestFrameworkScriptFile": "./testSetup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisCinelli/branded-qr-code.git"
+  },
+  "pre-commit": [
+    "lint-test-staged"
+  ],
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "data-uri-to-buffer": "2.0.0",
+    "jimp": "0.2.28",
+    "loglevel": "1.6.1",
+    "lru-cache": "4.1.1",
+    "qrcode": "1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-source-map-support": "1.0.0",
+    "babel-preset-env": "1.6.1",
+    "babelrc-rollup": "3.0.0",
+    "chalk": "2.3.0",
+    "eslint": "4.14.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.6.0",
+    "express": "4.16.2",
+    "express-unit": "2.0.1",
+    "globby": "7.1.1",
+    "is-buffer": "2.0.0",
+    "jest": "22.0.4",
+    "jest-extended": "0.5.0",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "0.53.3",
+    "rollup-plugin-babel": "3.0.3"
+  }
+}
