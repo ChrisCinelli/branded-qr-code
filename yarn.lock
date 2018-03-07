@@ -3539,6 +3539,10 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
+pngjs2@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/pngjs2/-/pngjs2-2.0.0.tgz#de1d3c9bd655645375e8c501615f7698309b58db"
+
 pngjs@^3.0.0, pngjs@^3.3.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.1.tgz#8e14e6679ee7424b544334c3b2d21cea6d8c209a"
