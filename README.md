@@ -72,6 +72,7 @@ brandedQRCode.route( opts )
   * `getLogoPath`: Function that returns the text to be put in the QRcode. It receives the `req` object. It can return a promise.
   * `ignoreCache`: Ignore the cached images (default: `false`).
   * `qrOpt`: Options for [npm `qrcode` module](https://github.com/soldair/node-qrcode/tree/6b5e5b1b6a147e2c463ebf53d6e5019cf1df9aa3) (defaults: `{ errorCorrectionLevel: 'M', margin: 2 }`).
+  * `getQrOpt`: Function that returns the qrOpt. It receives the `req` object. It can return a promise.
   * `maxAge`: The cache header to be added. `false` means no cache. Default 31557600 (1 year).
   * `onError`: `function(req, res, err)` called in case of an error. The default function log the error and return a 404.
 
