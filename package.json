@@ -3,6 +3,7 @@
   "version": "1.3.0",
   "description": "Branded QRcode generation",
   "author": "Chris Cinelli",
+  "license" : "MIT",
   "keywords": [
     "images",
     "logo",
