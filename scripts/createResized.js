@@ -6,7 +6,6 @@ import l from '../helpers/setupAndLogger';
 
 l.enableAll();
 
-
 // ////////
 // Resize to 512 (including padding)
 // ////////
