@@ -91,7 +91,7 @@
     "express": "4.17.1",
     "globby": "11.0.1",
     "is-buffer": "2.0.4",
-    "jest": "26.4.2",
+    "jest": "26.5.2",
     "jest-extended": "0.11.5",
     "lint-staged": "^10.4.0",
     "pngjs2": "2.0.0",
